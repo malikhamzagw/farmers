@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Farms Report</title>
+</head>
+<body>
+<h1>Report</h1>
+<table>
+    <thead>
+    <tr>Report By Farm</tr>
+    <tr>
+        <th>Farm Name</th>
+        <th>Season</th>
+        <th>Crop Type</th>
+        <th>Expected Area</th>
+        <th>Harvested Product</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="data : ${reportDataList.reportByFarms}">
+        <td th:text="${data.farmName}"></td>
+        <td th:text="${data.season}"></td>
+        <td th:text="${data.cropType}"></td>
+        <td th:text="${data.expectedProduct}"></td>
+        <td th:text="${data.harvestedProduct}"></td>
+    </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+    <tr>Report By Crop Type</tr>
+    <tr>
+        <th>Crop Type</th>
+        <th>Expected Area</th>
+        <th>Harvested Product</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="data : ${reportDataList.reportByCroptype}">
+        <td th:text="${data.cropType}"></td>
+        <td th:text="${data.expectedProduct}"></td>
+        <td th:text="${data.harvestedProduct}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
